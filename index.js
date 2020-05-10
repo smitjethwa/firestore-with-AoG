@@ -16,7 +16,8 @@ exports.dialogflowFirebaseFulfillment = functions.https.onRequest((request, resp
     let email = agent.parameters.email;
     db.collection("userDetails").add({ 
       name: name,
-      email: email
+      email: email,
+      password:password
     });
     agent.add('Data added successfully!!');
   }
